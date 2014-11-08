@@ -1,8 +1,93 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url(../img/grey-bg.jpg) fixed center;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+
+.alert {
+  position: absolute;
+  background: #e8534f;
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.alert h2 {
+  
+  color: white;
+  font-weight: 200;
+  font-size: 2em;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.shutme {
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+	color: #626262;
+}
+
+.weather-container {
+	text-align: center;
+	margin-top: 5em;
+}
+
+.subscript {
+	position: relative; 
+	top: -0.5em;
+	font-size: 0.5em;
+}
+
+.temp-num {
+    color: #e8534f;
+    font-size: 8em;
+    font-weight: 200;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.temp-text {
+    color: #626262;
+    font-size: 2em;
+    font-weight: 200;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.weather-icon {
+	width: 22em;
+	height: auto;
+	margin: 0 auto;
+}
+
+.weath-icon {
+	color: #626262;
+}
+
+.time {
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+  color: #626262;
+  font-weight: 200;
+  font-size: 3em;
+}
+
+.map {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 20em;
+	height: 20em;
+}
+
+/* Map */
+
+    #map-canvas { height: 100%; margin: 0; padding: 0;}
+    #map-canvas { height: 20em; }

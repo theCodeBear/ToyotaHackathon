@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="public/javascripts/main.js"</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Condition IQ</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Styles -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/animate.css" rel="stylesheet">
+    <!-- js google map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx2J3r6C7crRawBuJRSIdslKwYhrPM63s"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <div class="animated fadeInDown alert"><h2><strong>Warning:</strong> Slippery conditions ahead. Adjust speed accordingly.</h2><span class="shutme"><i class="fa fa-times fa-1x"></i></span></div>
+  <div class="container">
+    <div class="weather-container">
+    <img src="img/thunderstorm.png" class="weather-icon">
+    <!-- <i class="weath-icon fa fa-cloud fa-5x text-center animated bounce"></i> -->
+    <h2 class="temp-num">72<span class="subscript">&#9900; f</span></h2>
+    <p class="temp-text">Currently cloudy conditions</p>
+    </div>
+  </div>
+  <div id="footer">
+    <span class="time pull-right">3:21pm</span>
+  </div>
+  <div class="map pull-left"><div id="map-canvas"></div></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/ui.js"></script>
+    <script src="javascripts/map.js"></script>
   </body>
 </html>
