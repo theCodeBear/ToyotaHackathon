@@ -13,17 +13,23 @@
     <link href="stylesheets/animate.css" rel="stylesheet">
     <!-- HANDLEBARS -->
     <script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
-    <!-- js google map -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx2J3r6C7crRawBuJRSIdslKwYhrPM63s"></script>
   </head>
   <body>
+    <!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+    
+
+    <div class="animated fadeInDown alert"><h2><strong>Warning:</strong> Slippery conditions ahead. Adjust speed accordingly.</h2><span class="shutme"><i class="fa fa-times fa-1x"></i></span></div>
+
     <div id="weather-info">
     </div>
 
      <script id="weather-template" type="text/x-handlebars-template">
-      {{#if badWeather}}
-        <div class="animated fadeInDown alert"><h2><strong>Warning:</strong> Slippery conditions ahead. Adjust speed accordingly.</h2><span class="shutme"><i class="fa fa-times fa-1x"></i></span></div>
-      {{/if}}
+
+        
+
         <div class="container">
           <div class="weather-container">
           <img src="img/{{image}}"  class="weather-icon">
@@ -31,18 +37,16 @@
           <p class="temp-text">{{summary}}</p>
           </div>
         </div>
-        <div id="footer">
-          <div class="dev-console pull-right"><i class="fa fa-bolt fa-2x make-it-rain"></i></div>
+        
           <span id="time" class="time pull-right"></span>
         </div>
         <div class="map pull-left"><div id="map-canvas"></div></div>
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!--<script src="javascripts/bootstrap.min.js"></script>-->
-    <script src="javascripts/ui.js"></script>
-    <script src="javascripts/main.js"></script>
-    <script src="javascripts/map.js"></script>
+    <div id="footer">
+          <div class="dev-console pull-right"><i id="button" class="fa fa-bolt fa-2x make-it-rain"></i>
+          </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>

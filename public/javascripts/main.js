@@ -21,7 +21,16 @@ function convertMilesToLong(currentLat, currentLong, dX) {
 }
 
 // setInterval(callAPI(), 60000);
-callAPI();
+// var click = 0;
+// $("button").on("click", function() {
+//   click++;
+//   alert("clicked");
+//   callAPI(click);
+// });
+
+
+
+callAPI(); 
 
 // this makes the call to the API, do this once every minute
 function callAPI() {
@@ -42,10 +51,11 @@ function callAPI() {
     position.isLoaded=true;   
     console.log(position);
 
+
   // current position weather
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
-      console.log(data.currently.temperature);
-      weatherData.currentTemperature= data.currently.temperature;
+      // console.log(data.currently.temperature);
+      weatherData.currentTemperature= Math.round(data.currently.temperature);
       weatherData.summary = data.hourly.summary;
       if (data.currently.precipProbability < 0.2)
         weatherData.image = "sunny.png";
@@ -53,7 +63,14 @@ function callAPI() {
         weatherData.image = "sunny-cloud.png";
       else
         weatherData.image = "cloudy.png";
-      weatherData.rain = data.currently.precipProbability;
+      // weatherData.rain = data.currently.precipProbability;
+
+
+      // SIMULATION ON CLICK 2
+      // if (click == 2)
+      //   weather.image = "thunderstorm.png";
+
+
       refreshWeather();
       // $('#weather').html(data.currently.temperature + "&#xb0<span class='subscript'> f</span>");
     });
@@ -64,9 +81,16 @@ function callAPI() {
     newLati = convertMilesToLat(0, lati);
     newLongi = convertMilesToLong(lati, longi, 10);
     $.getJSON(url + apiKey + "/" + newLati + "," + newLongi + "?callback=?", function(data) {
-      console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
+      // console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
       if (data.currently.precipProbability > 0.1)
         weatherData.badWeather++;
+
+
+      // SIMULATION OF NEARBY INCLEMENT WEATHER ON CLICK 1
+      // if (click == 1)
+      //   weatherData.badWeather++;
+
+
       refreshWeather();
       // $('#weather').html(data.currently.temperature + "&#xb0<span class='subscript'> f</span>");
     });
@@ -75,8 +99,8 @@ function callAPI() {
     newLati = convertMilesToLat(7.07, lati);
     newLongi = convertMilesToLong(lati, longi, 7.07);
     $.getJSON(url + apiKey + "/" + newLati + "," + newLongi + "?callback=?", function(data) {
-      console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
-      console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
+      // console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
+      // console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
       if (data.currently.precipProbability > 0.1)
         weatherData.badWeather++;
       refreshWeather();
@@ -87,8 +111,8 @@ function callAPI() {
     newLati = convertMilesToLat(10, lati);
     newLongi = convertMilesToLong(lati, longi, 0);
     $.getJSON(url + apiKey + "/" + newLati + "," + newLongi + "?callback=?", function(data) {
-      console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
-      console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
+      // console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
+      // console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
       if (data.currently.precipProbability > 0.1)
         weatherData.badWeather++;
       refreshWeather();
@@ -99,8 +123,8 @@ function callAPI() {
     newLati = convertMilesToLat(7.07, lati);
     newLongi = convertMilesToLong(lati, longi, -7.07);
     $.getJSON(url + apiKey + "/" + newLati + "," + newLongi + "?callback=?", function(data) {
-      console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
-      console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
+      // console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
+      // console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
       if (data.currently.precipProbability > 0.1)
         weatherData.badWeather++;
       refreshWeather();
@@ -112,8 +136,8 @@ function callAPI() {
     newLati = convertMilesToLat(0, lati);
     newLongi = convertMilesToLong(lati, longi, -10);
     $.getJSON(url + apiKey + "/" + newLati + "," + newLongi + "?callback=?", function(data) {
-      console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
-      console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
+      // console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
+      // console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
       if (data.currently.precipProbability > 0.1)
         weatherData.badWeather++;
         refreshWeather()
@@ -125,8 +149,8 @@ function callAPI() {
     newLati = convertMilesToLat(-7.07, lati);
     newLongi = convertMilesToLong(lati, longi, 7.07);
     $.getJSON(url + apiKey + "/" + newLati + "," + newLongi + "?callback=?", function(data) {
-      console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
-      console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
+      // console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
+      // console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
       if (data.currently.precipProbability > 0.1)
         weatherData.badWeather++;
         refreshWeather()
@@ -138,8 +162,8 @@ function callAPI() {
     newLati = convertMilesToLat(-10, lati);
     newLongi = convertMilesToLong(lati, longi, 0);
     $.getJSON(url + apiKey + "/" + newLati + "," + newLongi + "?callback=?", function(data) {
-      console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
-      console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
+      // console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
+      // console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
       if (data.currently.precipProbability > 0.1)
         weatherData.badWeather++;
         refreshWeather()
@@ -151,8 +175,8 @@ function callAPI() {
     newLati = convertMilesToLat(-7.07, lati);
     newLongi = convertMilesToLong(lati, longi, 7.07);
     $.getJSON(url + apiKey + "/" + newLati + "," + newLongi + "?callback=?", function(data) {
-      console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
-      console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
+      // console.log("precip:" + data.currently.precipProbability + "cloudCover: " + data.currently.cloudCover + "wind: " + data.currently.windSpeed);
+      // console.log(data.currently.temperature + "long: " + newLongi + ", lat: " + newLati);
       if (data.currently.precipProbability > 0.1)
         weatherData.badWeather++;
 
