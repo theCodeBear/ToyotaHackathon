@@ -8,6 +8,16 @@ a {
   color: #00B7FF;
 }
 
+.dev-console {
+
+	margin-right: 5em;
+}
+
+.make-it-rain:hover {
+	color: black;
+	cursor: crosshair;
+}
+
 .alert {
   position: absolute;
   background: #e8534f;
@@ -71,6 +81,82 @@ a {
 	color: #626262;
 }
 
+* {
+  @include box-sizing(border-box);
+}
+
+$search-height: 40px;
+$search-width: 200px;
+
+.search {
+  height: $search-height;
+  overflow: hidden;
+  position: relative;
+  width: $search-height;
+  @include transition(width 0.2s ease-in-out);
+  .search-toggle {
+    background: #000;
+    color: #999;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    height: $search-height;
+    width: $search-height;
+    text-indent: -9999px;
+    text-decoration: none;
+  }
+  form {
+    display: none;
+  }
+  input {
+    border: 1px solid #ccc;
+    height: $search-height;
+    line-height: $search-height;
+    padding: 0 $search-height 0 5px;
+    width: $search-width;
+  }
+  button {
+    background: #000;
+    border: none;
+    display: block;
+    height: $search-height;
+    width: $search-height;
+    position: absolute; 
+    top: 0;
+    right: 0;
+    text-indent: -9999px;
+  }
+  &.open {
+    width: $search-width + $search-height;
+    .search-toggle {
+      display: block;
+      background: none;
+      text-indent: 0;
+      height: $search-height / 2;
+      width: $search-height / 2;
+      top: 50%;
+      margin-top: -$search-height / 4;
+      right: $search-height + 10px;
+    }
+    form {
+      display: block;
+    }
+  }
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
 .time {
 	position: absolute;
 	bottom: 1em;
@@ -107,3 +193,12 @@ a {
 -webkit-border-top-right-radius: 10px;
 border-top-right-radius: 10px;}
     #map-canvas { height: 15em; }
+
+/* Dashboard */
+
+.dashboard {
+	background: url(../dashboard.jpg);
+	background-size: cover;
+	width: 100%;
+	height: auto;
+}
