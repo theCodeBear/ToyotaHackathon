@@ -1,4 +1,12 @@
-    function initialize() {
+    // var gps = require('./javascripts/main.js');
+
+
+    // console.log("lat/long: " + lati + " " + longi);
+
+    // GOOGLE MAPS API CALL
+    $(function() {
+  function initialize() {
+
       var mapOptions = {
         zoom: 10
       };
@@ -17,3 +25,5 @@
       });
     }
     google.maps.event.addDomListener(window, 'load', initialize);
+
+  });
