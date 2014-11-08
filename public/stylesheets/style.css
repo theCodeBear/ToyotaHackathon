@@ -15,6 +15,7 @@ a {
   width: 100%;
   padding: 20px;
   text-align: center;
+  display:;
 }
 
 .alert h2 {
@@ -79,15 +80,30 @@ a {
   font-size: 3em;
 }
 
+.map-button {
+	position: absolute;
+	bottom: 3em;
+	left: 3em;
+}
+
 .map {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 20em;
-	height: 20em;
+	width: 15em;
+	height: 15em;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+
+}
+
+.map-shadow {
 }
 
 /* Map */
 
-    #map-canvas { height: 100%; margin: 0; padding: 0;}
-    #map-canvas { height: 20em; }
+    #map-canvas { height: 100%; margin: 0; padding: 0;-moz-border-radius-topright: 10px;
+-webkit-border-top-right-radius: 10px;
+border-top-right-radius: 10px;}
+    #map-canvas { height: 15em; }
