@@ -1,23 +1,6 @@
 
 $(function() {
 
-  // var request = require('request');
-
-  var params = { developerkey: "bea1d5e2e441", responseformat: "json", vid: "ITCUS_VID_052", infoids: "[Pson]" };
-  var params1 = "developerkey=bea1d5e2e441&responseformat=json&vid=ITCUS_VID_052&infoids=[Pson]";
-
-    // $.ajax({
-    //     type: "POST",
-    //     data: JSON.stringify(params),
-    //     url: "https://api-jp-t-itc.com/GetVehicleInfoMM",
-    //     contentType: "application/json",
-    //     success: function(data) { console.log(data) }
-    // });
-
-    // $.post()
-
-    //createCORSRequest("POST", "https://api-jp-t-itc.com/GetVehicleInfoMM");
-
   var apiKey = 'a460b122b56d6a8774c447d1b123a4b1';
   var url = 'https://api.forecast.io/forecast/';
   var lati = 37.8267;
@@ -42,6 +25,22 @@ callAPI();
 
 // this makes the call to the API, do this once every minute
 function callAPI() {
+
+  var carId="052";
+  var position = {
+    isLoaded: false,
+    lat: 0 ,
+    long: 0 ,
+    mapMatch: 0 
+  };
+  $.get("/cars/"+carId).then(function(response){
+    console.log(JSON.parse(response).vehicleinfo[0].data[0].Posn);
+    var Pos = JSON.parse(response).vehicleinfo[0].data[0].Posn;
+    lati = Pos.lat;
+    longi = Pos.lon;
+    position.mapMatch= Pos.MapMtchg;
+    position.isLoaded=true;   
+    console.log(position);
 
   // current position weather
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?", function(data) {
@@ -157,6 +156,7 @@ function callAPI() {
 
   refreshWeather()
 
+});
 }
 
   function refreshWeather() {
@@ -168,13 +168,6 @@ function callAPI() {
   
   var html = template(weatherData);
   $("#weather-info").html(html);
-  var carId="052";
-  var position = {
-    isLoaded: false,
-    lat: 0 ,
-    long: 0 ,
-    mapMatch: 0 
-  };
 
 }
 
