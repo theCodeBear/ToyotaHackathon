@@ -26,12 +26,13 @@
       {{/if}}
         <div class="container">
           <div class="weather-container">
-          <img src="img/thunderstorm.png" class="weather-icon">
+          <img src="img/{{image}}"  class="weather-icon">
           <h2 class="temp-num">{{currentTemperature}}<span class="subscript">&#9900; f</span></h2>
           <p class="temp-text">{{summary}}</p>
           </div>
         </div>
         <div id="footer">
+          <div class="dev-console pull-right"><i class="fa fa-bolt fa-2x make-it-rain"></i></div>
           <span id="time" class="time pull-right"></span>
         </div>
         <div class="map pull-left"><div id="map-canvas"></div></div>

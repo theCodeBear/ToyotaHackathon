@@ -47,6 +47,13 @@ function callAPI() {
       console.log(data.currently.temperature);
       weatherData.currentTemperature= data.currently.temperature;
       weatherData.summary = data.hourly.summary;
+      if (data.currently.precipProbability < 0.2)
+        weatherData.image = "sunny.png";
+      else if (data.currently.precipProbability < 0.6)
+        weatherData.image = "sunny-cloud.png";
+      else
+        weatherData.image = "cloudy.png";
+      weatherData.rain = data.currently.precipProbability;
       refreshWeather();
       // $('#weather').html(data.currently.temperature + "&#xb0<span class='subscript'> f</span>");
     });

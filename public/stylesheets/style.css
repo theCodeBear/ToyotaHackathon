@@ -8,6 +8,16 @@ a {
   color: #00B7FF;
 }
 
+.dev-console {
+
+  margin-right: 5em;
+}
+
+.make-it-rain:hover {
+  color: black;
+  cursor: crosshair;
+}
+
 .alert {
   position: absolute;
   background: #e8534f;
