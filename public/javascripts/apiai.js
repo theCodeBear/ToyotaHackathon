@@ -1,0 +1,2 @@
+
+curl -k -H "Content-Type: application/json; charset=utf-8" -H "Authorization: Bearer 9e14f9d3c84e4e0fae1f551c35e670c0" -H "ocp-apim-subscription-key: 096cba75-54d6-47f9-949d-4cbe3c0ce5f2" "https://api.api.ai/v1/entities"

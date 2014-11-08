@@ -18,7 +18,7 @@
   <div class="animated fadeInDown alert"><h2><strong>Warning:</strong> Slippery conditions ahead. Adjust speed accordingly.</h2><span class="shutme"><i class="fa fa-times fa-1x"></i></span></div>
   <div class="container">
     <div class="weather-container">
-    <img src="img/thunderstorm.png" class="weather-icon">
+    <img src="img/cloudy.png" class="weather-icon">
     <!-- <i class="weath-icon fa fa-cloud fa-5x text-center animated bounce"></i> -->
     <h2 class="temp-num">72<span class="subscript">&#9900; f</span></h2>
     <p class="temp-text">Currently cloudy conditions</p>
@@ -27,12 +27,16 @@
   <div id="footer">
     <span id="time" class="time pull-right">3:21pm</span>
   </div>
-  <div class="map pull-left"><div id="map-canvas"></div></div>
+  <div id="map-container" class="map pull-left">
+    <div class="map-shadow"></div>
+    <div id="map-canvas"></div>
+  </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
     <script src="/javascripts/ui.js"></script>
     <script src="/javascripts/map.js"></script>
     <script src = "/javascripts/main.js"></script>
+    <script src="javascripts/apiai.js"></script>
   </body>
 </html>

@@ -13,14 +13,10 @@ $(function() {
     position.lat = Pos.lat;
     position.long = Pos.lon;
     position.mapMatch= Pos.MapMtchg;
-    position.isLoaded=true;
-    
+    position.isLoaded=true;   
     console.log(position);
   })
-  // $.post()
-
-  //createCORSRequest("POST", "https://api-jp-t-itc.com/GetVehicleInfoMM");
-
+  
   var apiKey = 'a460b122b56d6a8774c447d1b123a4b1';
   var url = 'https://api.forecast.io/forecast/';
   var lati = position.lat;
