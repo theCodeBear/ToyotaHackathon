@@ -168,6 +168,13 @@ function callAPI() {
   
   var html = template(weatherData);
   $("#weather-info").html(html);
+  var carId="052";
+  var position = {
+    isLoaded: false,
+    lat: 0 ,
+    long: 0 ,
+    mapMatch: 0 
+  };
 
 }
 
