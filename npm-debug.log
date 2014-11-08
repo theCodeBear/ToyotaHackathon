@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/tkrone/.nvm/v0.11.14/bin/node',
+1 verbose cli   '/Users/tkrone/.nvm/v0.11.14/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'request' ]
+2 info using npm@2.0.0
+3 info using node@v0.11.14
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'request', null ]
+6 verbose cache add spec="request" args=["request",null]
+7 verbose parsed spec { raw: 'request',
+7 verbose parsed spec   scope: null,
+7 verbose parsed spec   name: 'request',
+7 verbose parsed spec   rawSpec: '',
+7 verbose parsed spec   spec: '*',
+7 verbose parsed spec   type: 'range' }
+8 verbose parsed spec { raw: 'request',
+8 verbose parsed spec   scope: null,
+8 verbose parsed spec   name: 'request',
+8 verbose parsed spec   rawSpec: '',
+8 verbose parsed spec   spec: '*',
+8 verbose parsed spec   type: 'range' }
+9 verbose addNamed [ 'request', '*' ]
+10 verbose addNamed [ null, '*' ]
+11 silly lockFile a4c2c8dc-request request@*
+12 verbose lock request@* /Users/tkrone/.npm/a4c2c8dc-request.lock
+13 silly lockFile a4c2c8dc-request request@*
+14 verbose stack Error: Attempt to unlock request@*, which hasn't been locked
+14 verbose stack     at unlock (/Users/tkrone/.nvm/v0.11.14/lib/node_modules/npm/lib/utils/locker.js:44:11)
+14 verbose stack     at cb (/Users/tkrone/.nvm/v0.11.14/lib/node_modules/npm/lib/cache/add-named.js:32:5)
+14 verbose stack     at /Users/tkrone/.nvm/v0.11.14/lib/node_modules/npm/lib/cache/add-named.js:41:20
+14 verbose stack     at /Users/tkrone/.nvm/v0.11.14/lib/node_modules/npm/lib/utils/locker.js:30:7
+14 verbose stack     at cb (/Users/tkrone/.nvm/v0.11.14/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+14 verbose stack     at /Users/tkrone/.nvm/v0.11.14/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+14 verbose stack     at Object.oncomplete (fs.js:93:15)
+15 verbose cwd /Users/tkrone/Documents/Programming/CodingHouse/Node/Hackathon
+16 error Darwin 14.0.0
+17 error argv "/Users/tkrone/.nvm/v0.11.14/bin/node" "/Users/tkrone/.nvm/v0.11.14/bin/npm" "install" "request"
+18 error node v0.11.14
+19 error npm  v2.0.0
+20 error Attempt to unlock request@*, which hasn't been locked
+21 error If you need help, you may report this error at:
+21 error     <http://github.com/npm/npm/issues>
+22 verbose exit [ 1, true ]
